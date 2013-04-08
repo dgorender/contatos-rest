@@ -35,8 +35,7 @@ post '/images' do
   if image
     status 201 # Created
     headers :location => uri("/images/#{image.id}", true, true)
-    #body ({:id => image.id}).to_json  
-    body @json_body[:data]
+    body ({:id => image.id}).to_json  
   else
     status 400 # Bad Request
   end
