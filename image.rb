@@ -4,6 +4,8 @@ class Image
 
   property :id, Serial
   property :data, Text
+  
+  belongs_to :test, :required => false
 end
 
 # Obtém todos os images (ou filtra pelos parâmetros)
@@ -33,7 +35,8 @@ post '/images' do
   if image
     status 201 # Created
     headers :location => uri("/images/#{image.id}", true, true)
-    body ({:id => image.id}).to_json    
+    #body ({:id => image.id}).to_json  
+    body @json_body[:data]
   else
     status 400 # Bad Request
   end
