@@ -48,7 +48,7 @@ end
 # YOUR CODE HERE! #####################################
 #######################################################
 
-require_relative 'contatos'
+require_relative 'image'
 #require_relative 'items'
 
 #######################################################
